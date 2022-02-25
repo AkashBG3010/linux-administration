@@ -1,19 +1,19 @@
 #!/bin/bash -x
 
-top #to list the highest priority process
-echo "NI is the nice value ranges between -20 t0 20. -20 is the highest priority process and 20 is the least priority process"
+htop #to list the highest priority process in sorted manner
 
 vmstat 1
 
 gnome-terminal --tab
 
-vmstat 5
+top
 
-ps -aux | less
+kill -TSTP 7350
 
-ls -l
+#kill kill -STOP 7350 #to do force stop
 
-echo "Here i the list, flag 'S' is for interuptable sleeping/waiting of of the process"
+kill -CONT 7350
 
-echo "End"
+ps ax | grep S
 
+#ps -aux | less #ststus S means, Interuptable Sleep/ Waiting state
