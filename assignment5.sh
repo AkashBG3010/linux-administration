@@ -10,8 +10,21 @@ sudo chage -I 20 nikhil
 
 sudo chage -W 2 nikhil
 
+su nikhil
+
+/etc/init.d/crond start
+
+/etc/init.d/crond stop
+
 mkdir /
 
-sudo usermod -d /path/to/dir nikhil
+cd /
 
-nikhil:x:0:0:root:/var/www/html/nikhil:/bin/bash
+mkdir nikhil
+
+sudo usermod -d /home/ubuntu//nikhil/ nikhil
+
+#nikhil:x:0:0:root:/var/www/html/nikhil:/bin/bash
+
+
+
